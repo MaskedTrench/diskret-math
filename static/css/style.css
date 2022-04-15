@@ -1,0 +1,67 @@
+body {
+    background-color: #ccc;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+section {
+    padding: 200px 0;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1040px;
+    padding: 0 20px;
+}
+
+.block {
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), -5px -5px 10px rgb(255, 255, 255);
+    margin-bottom: 20px;
+}
+
+.button {
+    color: black;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), -5px -5px 10px rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    transition: 200ms ease-in;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #cccccc;
+}
+
+.button:hover {
+    opacity: 80%;
+}
+
+.grid {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 50px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 50px;
+    grid-template-columns: repeat(4, 1fr);
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result of {{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="block">
+                <h2>Result of {{ title }}</h2>
+            </div>
+            <div class="block">
+                <div class="grid-3">
+                    <p>X</p>
+                    <p>Y</p>
+                    <p>Result</p>
+                    {% for item in result %}
+                        <p>{{ item[0] }}</p>
+                        <p>{{ item[1] }}</p>
+                        <p>{{ item[2] }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="block">
+                <h2>Result of {{ title }} SKNF</h2>
+            </div>
+            <div class="block">
+                <p>{{ sknf }}</p>
+            </div>
+            <div class="block">
+                <h2>Result of {{ title }} SDNF</h2>
+            </div>
+            <div class="block">
+                <p>{{ sdnf }}</p>
+            </div>
+            <div class="block">
+                <a href="/" class="button">Back to index</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
