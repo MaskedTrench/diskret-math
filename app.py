@@ -23,7 +23,7 @@ def first():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom2(res),
+                           polinom = build_polinom_2(res),
                           )
 
 
@@ -35,7 +35,7 @@ def second():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom2(res),
+                           polinom = build_polinom_2(res),
                           )
 
 
@@ -47,7 +47,7 @@ def third():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom(res, 2),
+                           polinom = build_polinom_2(res, 2),
                           )
 
 
