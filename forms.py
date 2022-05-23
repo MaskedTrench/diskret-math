@@ -49,6 +49,18 @@ def third_build_sdnf(table):
     return tmp
 
 
+def build_polinom(table, index):
+    res = {
+        0: "1⊕y⊕xy",
+        1: "1⊕y⊕x⊕xy",
+        2: "1⊕x",
+        3: "yz⊕x",
+        4: "1⊕z⊕y⊕x⊕xz⊕xy",
+        5: "1⊕xz⊕xy",
+    }
+    return res[index]
+
+
 def one_result():
     res = list(range(2 ** 2))
     index = 0
