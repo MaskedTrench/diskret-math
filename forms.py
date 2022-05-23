@@ -16,7 +16,7 @@ def to(x, y): return 1 if x <= y else 0
 def double_build_sknf(table):
     tmp = ''
     for pair in table:
-        if pair[2] == 0:
+        if pair[2] == 1:
             tmp = f"{tmp}({'-x' if table[0] == 0 else 'x'} v {'-y' if table[1] == 0 else 'y'}) ^ "
     tmp = tmp[0:len(tmp)-3]
     return tmp
@@ -25,7 +25,7 @@ def double_build_sknf(table):
 def third_build_sknf(table):
     tmp = ''
     for pair in table:
-        if pair[3] == 0:
+        if pair[3] == 1:
             tmp = f"{tmp}({'-x' if table[0] == 0 else 'x'} v {'-y' if table[1] == 0 else 'y'} v {'-z' if table[2] == 0 else 'z'}) ^ "
     tmp = tmp[0:len(tmp)-3]
     return tmp
@@ -34,7 +34,7 @@ def third_build_sknf(table):
 def double_build_sdnf(table):
     tmp = ''
     for pair in table:
-        if pair[2] == 1:
+        if pair[2] == 0:
             tmp = f"{tmp}({'-x' if table[0] == 0 else 'x'} ^ {'-y' if table[1] == 0 else 'y'}) v "
     tmp = tmp[0:len(tmp)-3]
     return tmp
@@ -43,7 +43,7 @@ def double_build_sdnf(table):
 def third_build_sdnf(table):
     tmp = ''
     for pair in table:
-        if pair[3] == 1:
+        if pair[3] == 0:
             tmp = f"{tmp}({'-x' if table[0] == 0 else 'x'} ^ {'-y' if table[1] == 0 else 'y'} ^ {'-z' if table[2] == 0 else 'z'}) v "
     tmp = tmp[0:len(tmp)-3]
     return tmp
