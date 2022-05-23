@@ -60,28 +60,83 @@ def build_polinom(table, index):
     }
     return res[index]
 
-
-def minimalization(table, index):
-    return {
-        0: [
-            [[1, 0], [1, 1]], "x∨¬y", "x∨¬y",
-        ],
-        1: [
-            [[1, 0], [0, 0]], "¬x¬y", "¬x∧¬y",
-        ],
-        2: [
-            [[1, 1], [0, 0]], "¬x", "¬x",
-        ],
-        3: [
-            [[0, 0, 1, 0], [1, 1, 0, 1]], "x¬y∨x¬z∨¬xyz", "(x∨y)∧(x∨z)∧(¬x∨¬y∨¬z)",
-        ],
-        4: [
-            [[1, 0, 1, 0], [0, 0, 0, 0]], "¬¬x¬y¬z∨¬xyz", "¬x∧(¬y∨z)∧(y∨¬z)",
-        ],
-        5: [
-            [[1, 1, 1, 1], [1, 0, 1, 0]], "¬x∨yz∨¬y¬z", "(¬x∨¬y∨z)∧(¬x∨y∨¬z)"
-        ]}[index]
-
+def build_polinom_2(massive2):
+    massive_2_2 = [-1] * 4
+    masive2_1 = [-1] * 4 
+    for i in range(4): 
+        masive2_1[i] = [-1] * 4 
+    for i in range(4): 
+        masive2_1[0][i] = massive2[i]    
+    for l in range(3):
+        massive_2_2[0] = massive2[0]
+        for i in range(3 - l):
+            if(masive2_1[l][i] == masive2_1[l][i + 1]):
+                masive2_1[l + 1][i] = 0
+            else:
+                masive2_1[l + 1][i] = 1
+        massive_2_2[l + 1] = masive2_1[l + 1][0]        
+    for l in range(4): 
+        for i in range(4): 
+            print(masive2_1[l][i], end=' ')
+        print()
+    print(massive_2_2)
+    string = ""
+    if(massive_2_2[0] != 0):
+        string = string + "1⊕ "
+    if(massive_2_2[2] != 0):
+        string = string + "1x1⊕ "
+    if(massive_2_2[1] != 0):
+        string = string + "1x2⊕ " 
+    if(massive_2_2[3] != 0):
+        string = string + "1x1x2⊕ "  
+    string = string[:-1]
+    tmp = ''
+    for i in range(4):
+        tmp = f'{tmp}{string} {massive2[i]}\n'
+    return tmp
+        
+def build_polinom_3(massive3):
+    massive_3_2 = [-1] * 8
+    masive3_1 = [-1] * 8 
+    for i in range(8): 
+        masive3_1[i] = [-1] * 8 
+    for i in range(8): 
+        masive3_1[0][i] = massive3[i]    
+    for l in range(7):
+        massive_3_2[0] = massive3[0]
+        for i in range(7 - l):
+            if(masive3_1[l][i] == masive3_1[l][i + 1]):
+                masive3_1[l + 1][i] = 0
+            else:
+                masive3_1[l + 1][i] = 1
+        massive_3_2[l + 1] = masive3_1[l + 1][0]        
+    for l in range(8): 
+        for i in range(8): 
+            print(masive3_1[l][i], end=' ')
+        print()
+    print(massive_3_2)
+    string = ""
+    if(massive_3_2[0] != 0):
+        string = string + "1⊕ "
+    if(massive_3_2[4] != 0):
+        string = string + "1x1⊕ "
+    if(massive_3_2[2] != 0):
+        string = string + "1x2⊕ " 
+    if(massive_3_2[1] != 0):
+        string = string + "1x3⊕ "  
+    if(massive_3_2[6] != 0):
+        string = string + "1x1x2⊕ "
+    if(massive_3_2[5] != 0):
+        string = string + "1x1x3⊕ "
+    if(massive_3_2[3] != 0):
+        string = string + "1x2x3⊕ "
+    if(massive_3_2[7] != 0):
+        string = string + "1x1x2x3⊕ "
+    string = string[:-1]
+    tmp = ''
+    for i in range(8):
+        tmp = f'{tmp}{string} {massive3[i]}\n'
+    return tmp
 
 def one_result():
     res = list(range(2 ** 2))

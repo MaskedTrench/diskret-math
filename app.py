@@ -4,7 +4,7 @@ from forms import (one_result, two_result, three_result,
                    fouth_result, five_result, six_result,
                    double_build_sknf, double_build_sdnf,
                    third_build_sdnf, third_build_sknf,
-                   build_polinom, minimalization
+                   build_polinom_2, build_polinom_3
                    )
 
 app = Flask(__name__)
@@ -23,10 +23,7 @@ def first():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom(res, 0),
-                           map_carno = minimalization(res, 0)[0],
-                           m_sknf = minimalization(res, 0)[1],
-                           m_sdnf = minimalization(res, 0)[2],
+                           polinom = build_polinom2(res),
                           )
 
 
@@ -38,10 +35,7 @@ def second():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom(res, 1),
-                           map_carno = minimalization(res, 1)[0],
-                           m_sknf = minimalization(res, 1)[1],
-                           m_sdnf = minimalization(res, 1)[2],
+                           polinom = build_polinom2(res),
                           )
 
 
@@ -54,9 +48,6 @@ def third():
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
                            polinom = build_polinom(res, 2),
-                           map_carno = minimalization(res, 2)[0],
-                           m_sknf = minimalization(res, 2)[1],
-                           m_sdnf = minimalization(res, 2)[2],
                           )
 
 
@@ -68,10 +59,7 @@ def fourth():
                            result=res,
                            sknf=third_build_sknf(res),
                            sdnf=third_build_sdnf(res),
-                           polinom = build_polinom(res, 3),
-                           map_carno = minimalization(res, 3)[0],
-                           m_sknf = minimalization(res, 3)[1],
-                           m_sdnf = minimalization(res, 3)[2],
+                           polinom = build_polinom_3(res),
                           )
 
 
@@ -83,10 +71,7 @@ def fives():
                            result=res,
                            sknf=third_build_sknf(res),
                            sdnf=third_build_sdnf(res),
-                           polinom = build_polinom(res, 4),
-                           map_carno = minimalization(res, 4)[0],
-                           m_sknf = minimalization(res, 4)[1],
-                           m_sdnf = minimalization(res, 4)[2],
+                           polinom = build_polinom_3(res),
                           )
 
 
@@ -98,10 +83,7 @@ def sixth():
                            result=res,
                            sknf=third_build_sknf(res),
                            sdnf=third_build_sdnf(res),
-                           polinom = build_polinom(res, 5),
-                           map_carno = minimalization(res, 5)[0],
-                           m_sknf = minimalization(res, 5)[1],
-                           m_sdnf = minimalization(res, 5)[2],
+                           polinom = build_polinom_3(res),
                           )
 
 if __name__ == '__main__':
