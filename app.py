@@ -23,7 +23,7 @@ def first():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom_2(res),
+                           #polinom = build_polinom_2(res),
                           )
 
 
@@ -35,7 +35,7 @@ def second():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom_2(res),
+                           #polinom = build_polinom_2(res),
                           )
 
 
@@ -47,7 +47,7 @@ def third():
                            result=res,
                            sknf=double_build_sknf(res),
                            sdnf=double_build_sdnf(res),
-                           polinom = build_polinom_2(res, 2),
+                           #polinom = build_polinom_2(res, 2),
                           )
 
 
@@ -59,7 +59,7 @@ def fourth():
                            result=res,
                            sknf=third_build_sknf(res),
                            sdnf=third_build_sdnf(res),
-                           polinom = build_polinom_3(res),
+                           #polinom = build_polinom_3(res),
                           )
 
 
@@ -71,7 +71,7 @@ def fives():
                            result=res,
                            sknf=third_build_sknf(res),
                            sdnf=third_build_sdnf(res),
-                           polinom = build_polinom_3(res),
+                           #polinom = build_polinom_3(res),
                           )
 
 
@@ -83,7 +83,7 @@ def sixth():
                            result=res,
                            sknf=third_build_sknf(res),
                            sdnf=third_build_sdnf(res),
-                           polinom = build_polinom_3(res),
+                           #polinom = build_polinom_3(res),
                           )
 
 if __name__ == '__main__':
