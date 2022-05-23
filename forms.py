@@ -61,6 +61,28 @@ def build_polinom(table, index):
     return res[index]
 
 
+def minimalization(table, index):
+    return {
+        0: [
+            [[1, 0], [1, 1]], "x∨¬y", "x∨¬y",
+        ],
+        1: [
+            [[1, 0], [0, 0]], "¬x¬y", "¬x∧¬y",
+        ],
+        2: [
+            [[1, 1], [0, 0]], "¬x", "¬x",
+        ],
+        3: [
+            [[0, 0, 1, 0], [1, 1, 0, 1]], "x¬y∨x¬z∨¬xyz", "(x∨y)∧(x∨z)∧(¬x∨¬y∨¬z)",
+        ],
+        4: [
+            [[1, 0, 1, 0], [0, 0, 0, 0]], "¬¬x¬y¬z∨¬xyz", "¬x∧(¬y∨z)∧(y∨¬z)",
+        ],
+        5: [
+            [[1, 1, 1, 1], [1, 0, 1, 0]], "¬x∨yz∨¬y¬z", "(¬x∨¬y∨z)∧(¬x∨y∨¬z)"
+        ]}[index]
+
+
 def one_result():
     res = list(range(2 ** 2))
     index = 0
