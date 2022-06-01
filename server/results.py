@@ -28,7 +28,7 @@ def three_result():
         for y in [0, 1]:
             res[index] = [x, y, implication(x,
                                         xor(
-                                            implication(negative(y), y * negative(x)), y
+                                            to(negative(y), y * negative(x)), y
                                         )
                                      )
                           ]
@@ -64,6 +64,6 @@ def six_result():
     for x in [0, 1]:
         for y in [0, 1]:
             for z in [0, 1]:
-                res[index] = [x, y, z, plus(negative(x), to(implication(xor(z, y), x), negative(z)))]
+                res[index] = [x, y, z, to(plus(negative(x), implication(xor(z, y), x)), negative(z))]
                 index += 1
     return res

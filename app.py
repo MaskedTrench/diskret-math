@@ -2,7 +2,9 @@ from distutils.command.build import build
 from flask import Flask, render_template
 from server import (one_result, two_result, three_result,
                    fouth_result, five_result, six_result,
-                   sknf, sdnf, polinom, minimalize_map
+                   sknf, sdnf, polinom, minimalize_map,
+                   karno_map,
+                   minimazide_sdnf, minimazide_sknf
                    )
 
 app = Flask(__name__)
@@ -23,6 +25,9 @@ def first():
                            sdnf=sknf(res),
                            polinom = polinom(res),
                            classfications = minimalize_map(res),
+                           karno_map = karno_map(res),
+                           mknf = minimazide_sknf(0),
+                           mdnf = minimazide_sdnf(0),
                           )
 
 
@@ -36,6 +41,9 @@ def second():
                            sdnf=sknf(res),
                            polinom = polinom(res),
                            classfications = minimalize_map(res),
+                           karno_map = karno_map(res),
+                           mknf = minimazide_sknf(1),
+                           mdnf = minimazide_sdnf(1),
                           )
 
 
@@ -49,6 +57,9 @@ def third():
                            sdnf=sknf(res),
                            polinom = polinom(res),
                            classfications = minimalize_map(res),
+                           karno_map = karno_map(res),
+                           mknf = minimazide_sknf(2),
+                           mdnf = minimazide_sdnf(2),
                           )
 
 
@@ -62,6 +73,9 @@ def fourth():
                            sdnf=sdnf(res),
                            polinom = polinom(res),
                            classfications = minimalize_map(res),
+                           karno_map = karno_map(res),
+                           mknf = minimazide_sknf(3),
+                           mdnf = minimazide_sdnf(3),
                           )
 
 
@@ -75,6 +89,9 @@ def fives():
                            sdnf=sdnf(res),
                            polinom = polinom(res),
                            classfications = minimalize_map(res),
+                           karno_map = karno_map(res),
+                           mknf = minimazide_sknf(4),
+                           mdnf = minimazide_sdnf(4),
                           )
 
 
@@ -88,6 +105,9 @@ def sixth():
                            sdnf=sdnf(res),
                            polinom = polinom(res),
                            classfications = minimalize_map(res),
+                           karno_map = karno_map(res),
+                           mknf = minimazide_sknf(5),
+                           mdnf = minimazide_sdnf(5),
                           )
 
 if __name__ == '__main__':

@@ -58,18 +58,21 @@ def polinom(table: List[List[int]]) -> str:
         res = __build_polinom_chunc(res)
         itter_res.append(res[0])
     
-    output = '1' if table[0][-1] == 1 else ''
-    i = 1
+    output = '1 ⊕' if  itter_res[0] == 1 else ''
+    output += 'x ⊕' if itter_res[1] == 1 else ''
+    output += 'y ⊕' if itter_res[2] == 1 else ''
+    i = 3
     try:
         table[0][3]
-        while i != len(itter_res):
-            output += f' xyz ⊕' if itter_res[i] == 1 else ''
-            i += 1
+        output += 'z ⊕' if itter_res[3] == 1 else ''
+        output += 'xy ⊕' if itter_res[4] == 1 else ''
+        output += 'xz ⊕' if itter_res[5] == 1 else ''
+        output += 'yz ⊕' if itter_res[6] == 1 else ''
+        output += 'xyz ⊕' if itter_res[7] == 1 else ''
     
     except:
-        while i != len(itter_res):
-            output += ' xy ⊕' if itter_res[i] == 1 else ''
-            i += 1
+        output += 'xy ⊕' if itter_res[4] == 1 else ''
+        output += 'xz ⊕' if itter_res[5] == 1 else ''
     
     return output[1:-2]
 
@@ -119,3 +122,31 @@ def minimalize_map(table: List[List[int]]) -> list[str]:
     
     return res
 
+
+def karno_map(table: List[List[int]]) -> List[int]:
+    res = []
+    for i in range(len(table)):
+        res.append(table[i][-1])
+    return res
+
+
+def minimazide_sdnf(n):
+    return {
+        0: "x∨¬y",
+        1: "¬xy",
+        2: "¬x",
+        3: "x¬y∨x¬z∨¬xyz",
+        4: "¬x¬y¬z∨¬xyz",
+        5: "¬z∨xy"
+    }[n]
+
+
+def minimazide_sknf(n):
+    return {
+        0: "x∨¬y",
+        1: "¬x∧y",
+        2: "¬x",
+        3: "(x∨y)∧(x∨z)∧(¬x∨¬y∨¬z)",
+        4: "¬x∧(¬y∨z)∧(y∨¬z)",
+        5: "(x∨¬z)∧(y∨¬z)"
+    }[n]
