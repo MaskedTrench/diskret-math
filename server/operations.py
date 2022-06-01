@@ -114,7 +114,8 @@ def minimalize_map(table: List[List[int]]) -> list[str]:
     res.append('+' if table[0][-1] == 0 else '-')
     res.append('+' if table[-1][-1] == 1 else '-')
     res.append('+' if 'xy' in polinom(table) else '-')
-    res.append('+' if monotonicity(table) else ['-'])
+    res.append('+' if monotonicity(table) else '-')
+    res.append('+' if table[0][-1] != table[-1][-1] else '-')
     
     return res
 
