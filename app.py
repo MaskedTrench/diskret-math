@@ -2,9 +2,8 @@ from distutils.command.build import build
 from flask import Flask, render_template
 from server import (one_result, two_result, three_result,
                    fouth_result, five_result, six_result,
-                   sknf, sdnf, polinom
+                   sknf, sdnf, polinom, minimalize_map
                    )
-from server.operations import polinom
 
 app = Flask(__name__)
 
@@ -23,7 +22,7 @@ def first():
                            sknf=sknf(res),
                            sdnf=sknf(res),
                            polinom = polinom(res),
-                           classfications = polinom(res),
+                           classfications = minimalize_map(res),
                           )
 
 
@@ -36,7 +35,7 @@ def second():
                            sknf=sknf(res),
                            sdnf=sknf(res),
                            polinom = polinom(res),
-                           classfications = polinom(res),
+                           classfications = minimalize_map(res),
                           )
 
 
@@ -49,7 +48,7 @@ def third():
                            sknf=sknf(res),
                            sdnf=sknf(res),
                            polinom = polinom(res),
-                           classfications = polinom(res),
+                           classfications = minimalize_map(res),
                           )
 
 
@@ -62,7 +61,7 @@ def fourth():
                            sknf=sknf(res),
                            sdnf=sdnf(res),
                            polinom = polinom(res),
-                           classfications = polinom(res),
+                           classfications = minimalize_map(res),
                           )
 
 
@@ -75,7 +74,7 @@ def fives():
                            sknf=sknf(res),
                            sdnf=sdnf(res),
                            polinom = polinom(res),
-                           classfications = polinom(res),
+                           classfications = minimalize_map(res),
                           )
 
 
@@ -88,7 +87,7 @@ def sixth():
                            sknf=sknf(res),
                            sdnf=sdnf(res),
                            polinom = polinom(res),
-                           classfications = polinom(res),
+                           classfications = minimalize_map(res),
                           )
 
 if __name__ == '__main__':
