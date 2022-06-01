@@ -31,18 +31,28 @@
             </div>
             <div class="block">
                 <h2>Result of {{ title }} SKNF</h2>
-            </div>
-            <div class="block">
                 <p>{{ sknf }}</p>
             </div>
             <div class="block">
                 <h2>Result of {{ title }} SDNF</h2>
-            </div>
-            <div class="block">
                 <p>{{ sdnf }}</p>
             </div>
             <div class="block">
-                <!-- <p>{{ polinom }}</p> -->
+                <h2>Polinom of{{ title }}</h2>
+                <p>{{ polinom }}</p>
+            </div>
+            <div class="block">
+                <h2>Post classification of{{ title }}</h2>
+                <div class="grid-5">
+                    <p>T0</p>
+                    <p>T1</p>
+                    <p>L</p>
+                    <p>M</p>
+                    <p>S</p>
+                    {% for item in classfications %}
+                        <p>{{ item }}</p>
+                    {% endfor %}
+                </div>
             </div>
             <div class="block">
                 <a href="/" class="button">Back to index</a>

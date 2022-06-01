@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/lib/codemirror.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>About</title>
+</head>
+<body>
+    <pre><code id="python_code">def func(A):
+        def one_result():
+        res = list(range(2 ** 2))
+        index = 0
+        for x in [0, 1]:
+            for y in [0, 1]:
+                res[index] = [x, y, plus(x, implication(x, y))]
+                index += 1
+        return res
+    
+    
+    def two_result():
+        res = list(range(2 ** 2))
+        index = 0
+        for x in [0, 1]:
+            for y in [0, 1]:
+                res[index] = [x, y, to(x, negative(y)) * xor(y, negative(x))]
+                index += 1
+        return res
+    
+    
+    def three_result():
+        res = list(range(2 ** 2))
+        index = 0
+        for x in [0, 1]:
+            for y in [0, 1]:
+                res[index] = [x, y, implication(x,
+                                            xor(
+                                                implication(negative(y), y * negative(x)), y
+                                            )
+                                         )
+                              ]
+                index += 1
+        return res
+    
+    
+    def fouth_result():
+        res = list(range(2 ** 3))
+        index = 0
+        for x in [0, 1]:
+            for y in [0, 1]:
+                for z in [0, 1]:
+                    res[index] = [x, y, z, xor(x, y * z)]
+                    index += 1
+        return res
+    
+    
+    def five_result():
+        res = list(range(2 ** 3))
+        index = 0
+        for x in [0, 1]:
+            for y in [0, 1]:
+                for z in [0, 1]:
+                    res[index] = [x, y, z, implication(plus(x, y), negative(x) * z)]
+                    index += 1
+        return res
+    
+    
+    def six_result():
+        res = list(range(2 ** 3))
+        index = 0
+        for x in [0, 1]:
+            for y in [0, 1]:
+                for z in [0, 1]:
+                    res[index] = [x, y, z, plus(negative(x), to(implication(xor(z, y), x), negative(z)))]
+                    index += 1
+        return res
+    
+    </code></pre>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/lib/codemirror.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/mode/python/python.min.js"></script>
+    <script type="text/javascript">
+        window.onload = () => {
+            var codeElement = document.getElementById('python_code');
+            var code = codeElement.innerText;
+          
+            codeElement.innerHTML = "";
+          
+            var codeMirror = CodeMirror(
+              codeElement,
+              {
+                value: code,
+                mode: "python",
+                theme: "default",
+                readOnly: true,
+                lineNumbers: true,
+              }
+            );
+        };
+    </script>
+</body>
+</html>

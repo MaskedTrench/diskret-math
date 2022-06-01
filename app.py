@@ -1,11 +1,10 @@
 from distutils.command.build import build
 from flask import Flask, render_template
-from forms import (one_result, two_result, three_result,
+from server import (one_result, two_result, three_result,
                    fouth_result, five_result, six_result,
-                   double_build_sknf, double_build_sdnf,
-                   third_build_sdnf, third_build_sknf,
-                   build_polinom_2, build_polinom_3
+                   sknf, sdnf, polinom
                    )
+from server.operations import polinom
 
 app = Flask(__name__)
 
@@ -21,9 +20,10 @@ def first():
     return render_template('result_out.html',
                            title='one',
                            result=res,
-                           sknf=double_build_sknf(res),
-                           sdnf=double_build_sdnf(res),
-                           #polinom = build_polinom_2(res),
+                           sknf=sknf(res),
+                           sdnf=sknf(res),
+                           polinom = polinom(res),
+                           classfications = polinom(res),
                           )
 
 
@@ -33,9 +33,10 @@ def second():
     return render_template('result_out.html',
                            title='second',
                            result=res,
-                           sknf=double_build_sknf(res),
-                           sdnf=double_build_sdnf(res),
-                           #polinom = build_polinom_2(res),
+                           sknf=sknf(res),
+                           sdnf=sknf(res),
+                           polinom = polinom(res),
+                           classfications = polinom(res),
                           )
 
 
@@ -45,9 +46,10 @@ def third():
     return render_template('result_out.html',
                            title='third',
                            result=res,
-                           sknf=double_build_sknf(res),
-                           sdnf=double_build_sdnf(res),
-                           #polinom = build_polinom_2(res, 2),
+                           sknf=sknf(res),
+                           sdnf=sknf(res),
+                           polinom = polinom(res),
+                           classfications = polinom(res),
                           )
 
 
@@ -57,9 +59,10 @@ def fourth():
     return render_template('result_three.html',
                            title='fourth',
                            result=res,
-                           sknf=third_build_sknf(res),
-                           sdnf=third_build_sdnf(res),
-                           #polinom = build_polinom_3(res),
+                           sknf=sknf(res),
+                           sdnf=sdnf(res),
+                           polinom = polinom(res),
+                           classfications = polinom(res),
                           )
 
 
@@ -69,9 +72,10 @@ def fives():
     return render_template('result_three.html',
                            title='fives',
                            result=res,
-                           sknf=third_build_sknf(res),
-                           sdnf=third_build_sdnf(res),
-                           #polinom = build_polinom_3(res),
+                           sknf=sknf(res),
+                           sdnf=sdnf(res),
+                           polinom = polinom(res),
+                           classfications = polinom(res),
                           )
 
 
@@ -81,9 +85,10 @@ def sixth():
     return render_template('result_three.html',
                            title='sixth',
                            result=res,
-                           sknf=third_build_sknf(res),
-                           sdnf=third_build_sdnf(res),
-                           #polinom = build_polinom_3(res),
+                           sknf=sknf(res),
+                           sdnf=sdnf(res),
+                           polinom = polinom(res),
+                           classfications = polinom(res),
                           )
 
 if __name__ == '__main__':

@@ -65,3 +65,10 @@ section {
     grid-column-gap: 50px;
     grid-template-columns: repeat(4, 1fr);
 }
+
+.grid-4 {
+    display: grid;
+    grid-row-gap: 20px;
+    grid-column-gap: 50px;
+    grid-template-columns: repeat(5, 1fr);
+}
