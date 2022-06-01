@@ -71,8 +71,7 @@ def polinom(table: List[List[int]]) -> str:
         output += 'xyz ⊕' if itter_res[7] == 1 else ''
     
     except:
-        output += 'xy ⊕' if itter_res[4] == 1 else ''
-        output += 'xz ⊕' if itter_res[5] == 1 else ''
+        output += 'xy ⊕' if itter_res[3] == 1 else ''
     
     return output[1:-2]
 
